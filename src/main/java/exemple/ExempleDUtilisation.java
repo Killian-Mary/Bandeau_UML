@@ -3,6 +3,7 @@ package exemple;
 import bandeau.Bandeau;
 import effect.LetterByLetterEffect;
 import effect.RotateEffect;
+import effect.Scenario;
 import effect.ZoomEffect;
 
 import java.awt.Color;
@@ -19,21 +20,24 @@ public class ExempleDUtilisation {
         Font font = monBandeau.getFont();
         Color back = monBandeau.getBackground();
         Color fore = monBandeau.getForeground();
-        
+       
         // set "de base"
         monBandeau.setBackground(Color.BLACK);
         monBandeau.setForeground(Color.white);
         monBandeau.setFont(new Font("ITC Garamond", Font.PLAIN, 50));
-
+        
+        Scenario scenario = new Scenario();
+        
         // Ajout des effets
         LetterByLetterEffect LbLE = new LetterByLetterEffect("Introducing the new iPhone12");
         ZoomEffect ze = new ZoomEffect(12);
         RotateEffect re = new RotateEffect(10);
+
+        scenario.addEffect(LbLE);
+        scenario.addEffect(re);
+        scenario.addEffect(ze);
         
-        // Scénario
-        LbLE.playOn(monBandeau);
-        ze.playOn(monBandeau);
-        re.playOn(monBandeau);
+        scenario.playOn(monBandeau);
         
         monBandeau.sleep(1000);
        

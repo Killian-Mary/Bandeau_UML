@@ -2,6 +2,8 @@ package effect;
 
 import java.util.ArrayList;
 
+import bandeau.Bandeau;
+
 public class Scenario {
 
 	private ArrayList<Effect> effects;
@@ -18,5 +20,8 @@ public class Scenario {
 	}
 	
 	public void playOn(Bandeau b) {
+		 for(Effect e : effects) {
+			 e.playOn(b);
+		 }
 	}
 }
