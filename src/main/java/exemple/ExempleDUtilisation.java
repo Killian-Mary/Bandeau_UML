@@ -1,6 +1,9 @@
 package exemple;
 
 import bandeau.Bandeau;
+import effect.LetterByLetterEffect;
+import effect.RotateEffect;
+import effect.ZoomEffect;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -23,9 +26,9 @@ public class ExempleDUtilisation {
         monBandeau.setFont(new Font("ITC Garamond", Font.PLAIN, 50));
 
         // Ajout des effets
-        ZoomEffect ze = new ZoomEffect(12);
         LetterByLetterEffect LbLE = new LetterByLetterEffect("Introducing the new iPhone12");
-        RotateEffect re = new RotateEffect();
+        ZoomEffect ze = new ZoomEffect(12);
+        RotateEffect re = new RotateEffect(10);
         
         // Scénario
         LbLE.playOn(monBandeau);
@@ -38,7 +41,4 @@ public class ExempleDUtilisation {
         monBandeau.close();
     }
     
-    public void upperLetterByLeter(String s, Bandeau b) {
-    	
-    }
 }

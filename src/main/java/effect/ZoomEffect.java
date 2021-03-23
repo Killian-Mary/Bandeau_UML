@@ -1,4 +1,4 @@
-package exemple;
+package effect;
 
 import java.awt.Font;
 
